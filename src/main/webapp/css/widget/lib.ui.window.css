@@ -1,0 +1,131 @@
+@CHARSET "UTF-8";
+
+/* ====================== 背景层的样式 ====================== */
+.window-background {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	display: none;
+	z-index: 15;
+}
+
+/* ====================== 主window的样式 ====================== */
+.window {
+  position: absolute;
+  background-color: #FFFFFF;
+  border: 1px solid #999999; 
+  padding: 2px;
+  z-index: 20;
+}
+
+/* ====================== 标题栏的样式 ====================== */
+.window-header {
+  position: relative;
+  overflow: hidden;
+  height: 25px;
+  line-height: 25px;
+  background:url('../../image/Button/panel_title.png') repeat-x;
+  border: 1px solid #99BBE8; 
+  -moz-user-select: -moz-none;
+}
+
+.window-header .icon {
+	position: relative;
+	top: 4px;
+	float: left;
+/*	width: 16px; */
+	height: 16px;
+	margin: 0px 3px;
+/*	background-image: url('../../image/Window/window.png'); */
+}
+
+.window-header .title {
+	position: relative;
+	color: #15428B;
+	font-weight: bold;
+	float: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.window-header .operate {
+	position: relative;
+	height: 100%;
+	float:right;
+	overflow: hidden;
+	width:45px;
+}
+
+.window-header .operate
+	.close,.min,.max,.restore,
+	.over_min,.over_max,.over_close,.over_restore{
+  position: relative;
+  top:5px;
+  float: right;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background-image: url('../../image/Window/operator.gif');
+}
+
+.window-header .close {
+  display: none;
+  background-position: 0px 0px;
+}
+.window-header .max {
+  display: none;
+  background-position: 0px -15px;
+}
+.window-header .min {
+  display: none;
+  background-position: 0px -30px;
+}
+.window-header .restore {
+  background-position: 0px -45px;
+}
+
+/* 鼠标划过事件 */
+.window-header .over_min {
+  background-position: -15px -30px;
+}
+.window-header .over_max {
+  background-position: -15px -15px;
+}
+.window-header .over_close {
+  background-position: -15px 0px;
+}
+.window-header .over_restore {
+  background-position: -15px -45px;
+}
+
+/* ====================== 内容的样式 ====================== */
+.window-body {
+  position: relative;
+  border: 1px solid #999999;  /* 内边框 */
+  border-top: none;
+  background-color: #F5F5F5;
+}
+
+.window-body .window-topbar {
+  position: relative;
+  display: none;
+  z-index: 1;
+  background-color: #E1E1E1;
+}
+
+.window-body .window-bottombar {
+  position: relative;
+  display: none;
+  z-index: 1;
+  background-color: #CBD0D4;
+}
+
+.window-body .window-content {
+  position: relative;
+  background-color: #FFFFFF;
+  overflow: auto;
+}

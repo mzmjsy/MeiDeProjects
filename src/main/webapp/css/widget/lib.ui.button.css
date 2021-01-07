@@ -1,0 +1,109 @@
+@CHARSET "UTF-8";
+
+/* ====================== 主button的样式 ====================== */
+.button {
+	position: absolute;
+	 background: url('../../image/Button_new/button_M.png') repeat-x center center;
+	/*  border-top: 1px solid #FFFFFF;  */
+	/*   border-right: 1px solid #999999;  */
+	/*   border-bottom: 1px solid #999999;   */
+ 	/*   border-left: 1px solid #999999;   */
+	/*   width: 99% !important;  */
+	 width: 20px; /* 让IE6显示这个高度 */ 
+}
+.button-left {
+	position: absolute;
+	background: url('../../image/Button_new/button_L.png') 0 0px no-repeat;
+	width:6px;
+	height:100%;
+}
+.button-right {
+	position: absolute;
+	background: url('../../image/Button_new/button_R.png') 0% 0px no-repeat;
+	width:6px;
+	height:100%;
+	right:-4px;
+}
+/*
+ *	与.button是互斥的
+ */
+.button-normal {
+	position: absolute;
+	background: url('');
+	background-color: #E1E1E1;
+	border: 1px solid #E1E1E1;
+}
+
+.button .left {
+	float: left;
+}
+
+.button .right {
+	float: right;
+}
+
+.button .button-main {
+	position: relative;
+	float: left;
+}
+
+.button .button-main .button-content {
+	position: relative;
+	padding: 0px 3px;
+}
+
+.button .button-main .button-icon {
+	position: relative;
+	padding: 1px;
+}
+
+.button .button-main .small {
+	width: 18px;
+	height: 18px;
+}
+
+.button .button-main .medium {
+	width: 24px;
+	height: 24px;
+}
+
+.button .button-main .large {
+	width: 32px;
+	height: 32px;
+}
+
+/* ====================== button箭头的样式 ====================== */
+.button .button-arrow {
+	position: relative;
+	float: right;
+	background: url('../../image/Button/arrow.gif') no-repeat center center;
+}
+
+
+/* ====================== 鼠标停留的样式 ====================== */
+.button-over {
+	cursor: pointer;
+	color: #FFFFFF;
+	background: url('../../image/Button_new/button_o_m.png') repeat-x center center;
+	border-top: 1px solid #7CB3F8;
+	border-right: 1px solid #353535;
+	border-bottom: 1px solid #353535;
+	border-left: 1px solid #353535;
+}
+
+
+/* ====================== 鼠标点击的样式 ====================== */
+.button-click {
+	cursor: pointer;
+	/* color: #FFFFFF; */
+	background: url('../../image/Button_new/button_o_m.png') repeat-x center center;
+	border-top: 1px solid #9EA4AD;
+	border-right: 1px solid #353535;
+	border-bottom: 1px solid #353535;
+	border-left: 1px solid #353535;
+}
+
+.button-position {
+	top: 1px;
+	left: 2px;
+}

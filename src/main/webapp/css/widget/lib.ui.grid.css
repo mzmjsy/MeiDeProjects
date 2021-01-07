@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+/* ====================== grid的样式 ====================== */
+
+.grid {
+	position: relative;
+	overflow: auto;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-right: 1px solid #999999;
+	width: 100% !important;
+ /*	width: 99999999px;*/
+	height: 100%;
+}
+
+.grid td {
+	white-space:nowrap;
+	overflow: hidden;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	height: 18px;
+	line-height: 18px;
+	cursor: pointer;
+}
+
+.grid td span {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 0px 5px;
+}
+
+.grid tr td.num {
+  width: 25px;
+/*  background-color: #D8DADC;*/
+	
+/*  border-left: solid 1px #F0F0F0;*/
+  text-align: center;
+}
+.grid tr td.chk {
+  width: 25px; 
+  text-align: center;
+}
+
+.grid tr td.center {
+  text-align: center;
+}
+.grid tr td.left {
+  text-align: left;
+}
+.grid tr td.right {
+  text-align: right;
+}
+
+/* ====================== grid表头的样式 ====================== */
+
+.table-head {
+	overflow: hidden;
+	/*background-color: #D8DADC;*/
+	background: url('../../image/Button_new/table_head2.png') repeat-x center center;
+	cursor:pointer;
+}
+
+.table-head td {
+	/*font-weight: bold;*/
+	text-align: center;
+	border-right: 1px solid #7B96B1;
+	border-top: 0px solid #A4AEB5;
+	border-bottom: 1px solid #92A0AA;
+}
+
+/* ====================== grid内容的样式 ====================== */
+
+.table-body {
+	overflow: auto;
+	overflow-x: hidden;
+	background-color: #FFFFFF;
+}
+
+.table-body .even {
+	 background-color: #E1E1E1;
+}
+
+.table-body .tr-toggle {
+	background-color:#F1F4F9;
+}
+
+.table-body .tr-over {
+	cursor: pointer;
+	/*color: #FFFFFF;*/
+	background-color: #D2E9FF;
+}
+
+.table-body .tr-over td {
+/*	color: #FFFFFF; */
+}
+.datagrid-sort-icon {
+	padding: 2px 13px 3px 0px;
+	background: url('../../image/themes/default/images/datagrid_sort_desc.gif') no-repeat center right;
+}

@@ -1,0 +1,14 @@
+.Wdate{
+	background:#FFFFFF url(datePicker.gif) no-repeat right;
+	cursor: pointer;
+}
+
+.Wtime{
+	background:#FFFFFF url(time.gif) no-repeat right !important;
+	cursor: pointer;
+}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+/* ====================== 主菜单的样式 ====================== */
+.toolbar {
+  position: relative;
+ /* border-top: 1px solid #8DB2E3; */
+ /* border-bottom: 1px solid #8DB2E3; */
+ border-right: 1px solid #8DB2E3;
+ /* background-color:#CFDAE6; */
+  text-align: center;
+   background: url('../../image/Button_new/toolbar.png') repeat-x center center;-->
+}
+
+/*********************** 一级菜单栏样式 ***********************/
+.toolbar-main-ul {
+	display: inline;
+	text-align: center;
+}
+
+.toolbar-main-ul .toolbar-main-li {
+	position: relative;
+	list-style-type: none;
+	float: left;
+	height: 100%;
+	padding: 0px;
+	margin: 0px 3px;
+}
+
+/*********************** 竖直Seperater分隔符部分 ***********************/
+.toolbar-v-seperater {
+	list-style-type: none;
+	float: left;
+	display: block;
+	padding: 0px;
+	border-left: 1px solid #999999;
+	border-right: 1px solid #FFFFFF;
+	margin: 0px 3px;
+	width: 0px;
+	height: 100%;
+}
+
+/*********************** 子菜单栏样式 ***********************/
+.toolbar-child-ul {
+	position: absolute;
+	z-index: 10;
+	border: 1px solid #999999; 
+	background-color: #F5F5F5;
+	padding: 2px 2px;
+}
+
+.toolbar-child-ul .toolbar-child-li {	
+	*display: inline;
+	position: relative;
+	list-style-type: none;
+	padding: 0px 0px;
+}
+
+
+/*********************** 水平Seperater分隔符部分 ***********************/
+.toolbar-h-seperater {
+	list-style-type: none;
+	font-size: 0px;
+	line-height: 0px;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #FFFFFF;
+	margin: 5px 0px 3px 0px;
+	padding: 0px;
+}
+
+.toolbar-child-ul-visibility {
+	display: '';
+	visibility: hidden;
+}

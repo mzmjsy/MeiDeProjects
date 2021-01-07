@@ -1,0 +1,112 @@
+@CHARSET "UTF-8";
+
+/* ====================== tab的样式 ====================== */
+.tab {
+  position: relative;
+	float :left;
+  /* border: 1px solid #999999; */
+  text-align: center;
+}
+
+/*********************** 标签页样式 ***********************/
+.tab-control {
+	position: absolute;
+	/*background-color: #CCCCCC;*/
+	text-align: center;
+	overflow: hidden;
+	height: 26px;
+	/*width:200%; */
+	width:100%;
+	background-color: #E1DFE0;
+    background:transparent url(../../image/TabPanel/tab-bj.png) repeat-x;
+}
+.tab-control .tab-item {
+	position: relative;
+	overflow: hidden;
+	height: 24px;
+}
+
+.tab-control .tab-item ul {
+	display: inline;
+	text-align: center;
+}
+
+.tab-control .tab-item ul li {
+	position: relative;
+	list-style-type: none;
+	float: left;
+	padding: 0px;
+	margin-left: 3px;
+}
+
+.tab-control .tab-item ul li .button {
+	border-top: 1px solid #8DB2E3;
+	border-right: 1px solid #8DB2E3;
+	border-left: 1px solid #8DB2E3;
+}
+
+.tab-control .tab-item ul li .button .button-arrow {
+	position: relative;
+	float: right;
+	background: url('../../image/Tab/close.gif') no-repeat center top;
+}
+
+.tab-control .tab-item ul li .button-over {
+	background: url('../../image/Button/bg-click.png') repeat-x center center;
+	border: 1px solid #4F98F6;
+}
+
+.tab-control .tab-item ul li .button-click {
+	/*background: #4F98F6; */
+	background: url('../../image/Button_new/button_o_m.png') repeat-x center center;
+	border: 1px solid #4F98F6;
+}
+
+
+/*********************** 水平分隔符样式 ***********************/
+.tab-spacer {
+	position: relative;
+	height: 3px;
+	line-height: 3px;
+	margin-top: -1px;
+	background-color: #616A76;
+	
+	background-color: #4F98F6;
+	border-top: 1px solid #4F98F6;
+	border-bottom: 1px solid #4F98F6;
+}
+
+/*********************** 标签内容样式 ***********************/
+.tab-content {
+	position: relative;
+	background-color: #FFFFFF;
+	top:26px;
+}
+
+
+/*********************** 左右滚动按钮样式 ***********************/
+.tab-control .tab-scroll-left {
+	position: absolute;
+	top: 2px;
+	left: 0px;
+	width: 16px;
+	height: 20px;
+	border-top: 1px solid #6D6E6E;
+	border-right: 1px solid #6D6E6E;
+	cursor: pointer;
+	background: url('../../image/Tab/scroll-left2.gif') no-repeat center center;
+	background-color: #B7B3B3;
+}
+
+.tab-control .tab-scroll-right {
+	position: absolute;
+	top: 2px;
+	right: 0px;
+	width: 16px;
+	height: 20px;
+	border-top: 1px solid #6D6E6E;
+	border-left: 1px solid #6D6E6E;
+	cursor: pointer;
+	background: url('../../image/Tab/scroll-right2.gif') no-repeat center center;
+	background-color: #B7B3B3;
+}

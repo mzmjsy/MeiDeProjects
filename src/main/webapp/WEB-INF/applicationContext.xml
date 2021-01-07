@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	
+    <!--    multiple data source   -->
+    <bean id="parentDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	</bean>
+	<bean id="bohDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" parent="parentDataSource">
+		<property name="driverClass" value="${jdbc.driver_boh}"></property>
+		<property name="jdbcUrl" value="${jdbc.url_boh}"></property>
+		<property name="user" value="${jdbc.username_boh}"></property>
+		<property name="password" value="${jdbc.password_boh}"></property>
+		<property name="minPoolSize" value="5"/><!-- 允许最小连接数量为5个 --> 
+	    <property name="maxPoolSize" value="50"/> <!-- 允许最大连接数量为10个 --> 
+	    <property name="initialPoolSize" value="5"/><!-- 初始化连接池时连接数量为5个 -->  
+	    <property name="maxIdleTime" value="3600"/> <!-- 连接有效时间，连接超过3600秒未使用，则该连接丢弃 -->
+	    <property name="acquireIncrement" value="4"/> <!-- 连接用完时，一次产生的新连接步进值为2 -->
+        <property name="checkoutTimeout" value="300000" /> <!-- 获取新连接的超时时间为10000毫秒 -->  
+	    <property name="maxStatements" value="500"/> <!-- 允许连接池最大生成100个PreparedStatement对象 -->  
+	    <property name="idleConnectionTestPeriod" value="60"/><!-- 每个60秒检查连接对象状态 -->
+	    <property name="acquireRetryAttempts" value="10"/><!-- 获取连接失败后再尝试10次，再失败则返回DAOException异常 --> 
+        <property name="acquireRetryDelay" value="1000" /> <!-- 获取下一次连接时最短间隔1000毫秒，有助于提高性能 -->  
+	    <property name="breakAfterAcquireFailure" value="false"/>
+	    <property name="testConnectionOnCheckout" value="false"/>
+	</bean>
+	
+<!--	<bean id="dataSource" class="com.choice.framework.util.DataSources">-->
+<!--		<property name="targetDataSources">-->
+<!--			<map key-type="java.lang.String">-->
+<!--				<entry value-ref="bohDataSource" key="BOH"></entry>-->
+<!--			</map>-->
+<!--		</property>-->
+<!--		<property name="defaultTargetDataSource" ref="bohDataSource"></property>-->
+<!--	</bean>-->
+</beans>
