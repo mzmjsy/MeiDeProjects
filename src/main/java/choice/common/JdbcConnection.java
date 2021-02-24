@@ -71,7 +71,7 @@ public class JdbcConnection {
 	static {
 		try {
 			// 读取配置文件中的jdbc参数信息
-			ResourceMap dst_rm = new ResourceMap(ItemPath.getItemPathBSorCS()+"/jdbc");
+			ResourceMap dst_rm = new ResourceMap(ItemPath.getItemPathBSorCS() + "/jdbc");
 			String dst_driver = dst_rm.getString("jdbc.driver_dst");
 			String dst_url = dst_rm.getString("jdbc.url_dst");
 			String dst_user = dst_rm.getString("jdbc.username_dst");

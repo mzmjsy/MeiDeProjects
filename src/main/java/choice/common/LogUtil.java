@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 public class LogUtil {
 	public static final String POSXML = "posXml";
 	public static final String IMSXML = "imsXml";
+	public static final String DSTXML = "dstXml";
 	
 	public static final String PATH = LogUtil.class.getResource("").getPath().substring(1).replace("WEB-INF/classes/choice/common/", "log");
 	

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: choice.database:sqlserver-sqljdbc4:17.12.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/choice/database/sqlserver-sqljdbc4/17.12.9/sqlserver-sqljdbc4-17.12.9.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/choice/database/sqlserver-sqljdbc4/17.12.9/sqlserver-sqljdbc4-17.12.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/choice/database/sqlserver-sqljdbc4/17.12.9/sqlserver-sqljdbc4-17.12.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

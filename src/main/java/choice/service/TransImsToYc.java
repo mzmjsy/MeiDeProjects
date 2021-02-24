@@ -34,16 +34,16 @@ public class TransImsToYc {
     	//数据同步
     	String flag = this.insertYc();
 
-    	if ("Y" == flag) {
+    	if ("Y".equals(flag)) {
 			System.out.println("【数据同步成功】");
-		}else{
+		} else {
 			System.out.println("【数据同步失败：" + flag + "】");
 		}
 		LogUtil.writeToTxt(LogUtil.IMSXML, "ims", "【数据同步失败：" + flag + "】");
     }
     
     /**
-     * 描述:查询员工在铂金中的编码同步到辰森库中
+     * 描述:
      * 作者:马振
      * 时间:2016年8月26日上午10:05:11
      * @return
@@ -194,14 +194,6 @@ public class TransImsToYc {
 	}
 
     public static void client(String param) {
-        try {
-            JaxWsDynamicClientFactory factroy = JaxWsDynamicClientFactory.newInstance();
-            //DynamicClientFactory factroy = DynamicClientFactory.newInstance();
-            Client client = factroy.createClient("http://www.webxml.com.cn/WebServices/TraditionalSimplifiedWebService.asmx?wsdl");
-            Object[] results = client.invoke("toTraditionalChinese", param);
-            System.out.println("client方式:" + results[0]);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
     }
 }

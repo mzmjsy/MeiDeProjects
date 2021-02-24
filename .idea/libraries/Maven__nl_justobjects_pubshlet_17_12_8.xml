@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: nl.justobjects:pubshlet:17.12.8">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/nl/justobjects/pubshlet/17.12.8/pubshlet-17.12.8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/nl/justobjects/pubshlet/17.12.8/pubshlet-17.12.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/nl/justobjects/pubshlet/17.12.8/pubshlet-17.12.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

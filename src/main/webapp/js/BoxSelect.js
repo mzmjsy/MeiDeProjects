@@ -17,9 +17,9 @@ $(function(){
 	 });
 	  //输出值
 	$("#send").click(function(){
-		var str="你选中的是：\r\n";
+		var str="你选中的是：\r";
 		$('[name=idList]:checkbox:checked').each(function(){
-			str+=$(this).val()+"\r\n";
+			str+=$(this).val()+"\r";
 		});
 		alert(str);
 	});

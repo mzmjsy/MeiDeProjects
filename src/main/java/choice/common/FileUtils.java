@@ -34,18 +34,22 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
+/**
+ * @author mz
+ */
 @SuppressWarnings("resource")
 public class FileUtils {
 	public static Logger log = Logger.getLogger(FileUtils.class);
-	
-	//POS数据生成XML路径
+
+	/**
+	 * POS数据生成XML路径
+	 */
 	static String path = new ResourceMap(ItemPath.getItemPathBSorCS() + "/time").getString("xmlstoragepath");	
 	
 	/**
 	 * 获取文件列表
 	 * 
-	 * @param String
-	 *            fileDir 获取文件的目录
+	 * @param fileDir 获取文件的目录
 	 * @return 文件数组
 	 */
 	public static File[] getFileList(String fileDir) {

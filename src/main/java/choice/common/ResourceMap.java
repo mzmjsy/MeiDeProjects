@@ -8,10 +8,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+/**
+ * @author mz
+ */
 public class ResourceMap {
 
 	private Properties properties;
@@ -23,10 +27,10 @@ public class ResourceMap {
 		
 		properties = new Properties();
 		try {
-			canonicalName = clazz.getSimpleName()+".properties";
+			canonicalName = clazz.getSimpleName() +".properties";
 			InputStream in = new FileInputStream(canonicalName);
 			
-			properties.load(new InputStreamReader(in,"UTF-8"));
+			properties.load(new InputStreamReader(in, StandardCharsets.UTF_8));
 			in.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -40,7 +44,7 @@ public class ResourceMap {
 			canonicalName = path+".properties";
 			InputStream in = new FileInputStream(canonicalName);
 			
-			properties.load(new InputStreamReader(in,"UTF-8"));
+			properties.load(new InputStreamReader(in, StandardCharsets.UTF_8));
 			in.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -69,7 +73,7 @@ public class ResourceMap {
 		try {
 			canonicalName = path+".properties";
 			fos = new FileOutputStream(canonicalName);
-			properties.store(new OutputStreamWriter(fos,"UTF-8"),null); 
+			properties.store(new OutputStreamWriter(fos, StandardCharsets.UTF_8),null);
 			//fos.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

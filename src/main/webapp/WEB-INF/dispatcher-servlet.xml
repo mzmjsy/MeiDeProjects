@@ -37,16 +37,17 @@
 <!-- 	<mvc:resources mapping="/jsp/**" location="/jsp/" cache-period="31556926"/> -->
 <!-- 	<mvc:resources mapping="/html/**" location="/WEB-INF/html/" cache-period="31556926"/>  -->
 	<!-- Configures the @Controller programming model -->
-<!-- 	<mvc:annotation-driven /> -->
-<!-- 	<mvc:view-controller path="/" view-name="redirect:/index"/> -->
+ 	<mvc:annotation-driven />
+ 	<mvc:view-controller path="/" view-name="redirect:/index"/>
    
 	<!--   	Spring mvc视图解析器                         -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
     	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
       	<property name="prefix" value="/jsp/" />  
       	<property name="suffix" value=".jsp" />  
-  	</bean>   
-<!--   	<bean name="/index.action" class="org.springframework.web.servlet.mvc.ParameterizableViewController"> -->
-<!--     	<property name="viewName" value="/index.jsp"/> -->
-<!--     </bean> -->
+  	</bean>
+
+<!--   	<bean name="/index.action" class="org.springframework.web.servlet.mvc.ParameterizableViewController">-->
+<!--     	<property name="viewName" value="/index.jsp"/>-->
+<!--     </bean>-->
 </beans> 

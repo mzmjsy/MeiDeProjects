@@ -304,7 +304,7 @@ var PL = {
 					} else {
 						var event = new PushletEvent();
 						event.put('p_event', 'error')
-						event.put('p_reason', '[pushlet] problem retrieving XML data:\n' + xmlhttp.statusText);
+						event.put('p_reason', '[pushlet] problem retrieving XML data:' + xmlhttp.statusText);
 						PL._onEvent(event);
 					}
 				}
@@ -320,7 +320,7 @@ var PL = {
 			if (xmlhttp.status != 200) {
 				var event = new PushletEvent();
 				event.put('p_event', 'error')
-				event.put('p_reason', '[pushlet] problem retrieving XML data:\n' + xmlhttp.statusText);
+				event.put('p_reason', '[pushlet] problem retrieving XML data:' + xmlhttp.statusText);
 				PL._onEvent(event)
 				return null;
 			}
@@ -601,7 +601,7 @@ function PushletEvent(xml) {
 	this.toString = function() {
 		var res = '';
 		for (var i in this.arr) {
-			res = res + i + '=' + this.arr[i] + '\n';
+			res = res + i + '=' + this.arr[i] + '';
 		}
 		return res;
 	}

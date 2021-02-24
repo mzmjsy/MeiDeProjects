@@ -2,7 +2,7 @@ package choice.domain;
 
 /**
  * 描述:处理支付宝数据实体类
- * @author:马振
+ * @author mz
  * 时间:2020年12月13日
  */
 public class QualityInfo {

@@ -2,6 +2,7 @@ package choice.timing.general;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.concurrent.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import choice.common.ItemPath;
 import choice.common.ResourceMap;
-import choice.timing.bohbojin.AutoTransData;
+import choice.timing.trans.AutoTransData;
 
 /**
  * @author 马振
@@ -66,7 +67,7 @@ public class GeneralServlet extends HttpServlet{
 			@Override
 			public void run(){
 			do{
-				new AutoTransData().transImsToYc();
+				new AutoTransData().transImsToDst();
 
 				//间隔时间
 				int time = Integer.parseInt(rm.getString("time"));

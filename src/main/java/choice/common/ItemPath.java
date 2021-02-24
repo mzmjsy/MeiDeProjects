@@ -1,5 +1,10 @@
 package choice.common;
 
+import com.alibaba.fastjson.JSONPath;
+import com.alibaba.fastjson.parser.JSONToken;
+
+import java.security.spec.RSAOtherPrimeInfo;
+
 /**
  * 获取工程目录
  * @author zhb
@@ -35,7 +40,7 @@ public class ItemPath {
 	
 	public static String getItemPath() {
 		String path = ItemPath.class.getProtectionDomain().getCodeSource().getLocation().getPath().replaceAll("classes.*", "");
-	   return path;
+	    return path;
 	}
 	/**
 	 * BSorCS通用程序路径

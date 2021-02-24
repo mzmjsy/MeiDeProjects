@@ -82,7 +82,7 @@ function builtToolBar(params){
 			}
 			var head = $("<input type='hidden' name='headers'/>");
 			form.find("input[name='headers']").remove();
-			head.val(headers.replace(/\r\n/g,""));
+			head.val(headers.replace(/\r/g,""));
 			head.appendTo(form);
 			form.attr('action',params.excelUrl);
 			form.submit();

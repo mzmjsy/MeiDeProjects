@@ -368,7 +368,7 @@ if ( typeof define === 'function' && define.amd ) {
 							newstyles += 'behavior:' + behaviorsIE + ';';
 						}
 					}
-					newstyles += '}\r\n';
+					newstyles += '}\r';
 				}
 			}
 			return newstyles;
@@ -377,7 +377,7 @@ if ( typeof define === 'function' && define.amd ) {
 		// Absolute path to the .htc-files
 		scriptpath:		
 			window.polyfilter_scriptpath ? window.polyfilter_scriptpath : (function(){
-				alert('Please configure the polyfill\'s absolute(!) script path before referencing the css-filters-polyfill.js, like so:\r\nvar polyfilter_scriptpath = "/js/css-filters-polyfill/";');
+				alert('Please configure the polyfill\'s absolute(!) script path before referencing the css-filters-polyfill.js, like so:\rvar polyfilter_scriptpath = "/js/css-filters-polyfill/";');
 				return './'
 			})(),
 		
@@ -2135,7 +2135,7 @@ CSSScanner.prototype = {
       return String.fromCharCode(code);
     }
     c = this.read();
-    if (c != "\n")
+    if (c != "")
       return c;
     return "";
   },
@@ -2247,13 +2247,13 @@ CSSScanner.prototype = {
         c = this.peek();
         if (c == -1)
           break;
-        else if (c == "\n" || c == "\r" || c == "\f") {
+        else if (c == "" || c == "\r" || c == "\f") {
           d = c;
           c = this.read();
-          // special for Opera that preserves \r\n...
+          // special for Opera that preserves \r...
           if (d == "\r") {
             c = this.peek();
-            if (c == "\n")
+            if (c == "")
               c = this.read();
           }
         }
@@ -2262,7 +2262,7 @@ CSSScanner.prototype = {
           c = this.peek();
         }
       }
-      else if (c == "\n" || c == "\r" || c == "\f") {
+      else if (c == "" || c == "\r" || c == "\f") {
         break;
       }
       else
@@ -5287,7 +5287,7 @@ jscsspStylesheet.prototype = {
   cssText: function() {
     var rv = "";
     for (var i = 0; i < this.cssRules.length; i++)
-      rv += this.cssRules[i].cssText() + "\n";
+      rv += this.cssRules[i].cssText() + "";
     return rv;
   },
 
@@ -5525,7 +5525,7 @@ jscsspDeclaration.prototype = {
           var property = prefixes[propertyIndex];
           rv += (propertyIndex ? gTABS : "") + property + ": ";
           rv += this.valueText + (this.priority ? " !important" : "") + ";";
-          rv += ((prefixes.length > 1 && propertyIndex != prefixes.length -1) ? "\n" : "");
+          rv += ((prefixes.length > 1 && propertyIndex != prefixes.length -1) ? "" : "");
         }
         return rv;
       }
@@ -5545,7 +5545,7 @@ jscsspDeclaration.prototype = {
           else
             return null;
         rv += (this.priority ? " !important" : "") + ";" +
-              ((prefixes.length > 1 && propertyIndex != prefixes.length -1) ? "\n" : "");
+              ((prefixes.length > 1 && propertyIndex != prefixes.length -1) ? "" : "");
       }
       return rv;
     }
@@ -5574,7 +5574,7 @@ jscsspDeclaration.prototype = {
 
     for (var j in extras) {
       if (extras[j]) {
-        var str = "\n" + gTABS +  this.property + ": ";
+        var str = "" + gTABS +  this.property + ": ";
         for (var i = 0; i < this.values.length; i++) {
           var v = this.values[i].cssText();
           if (v != null) {
@@ -5600,7 +5600,7 @@ jscsspDeclaration.prototype = {
         if (str)
           rv += str + ";"
         else
-          rv += "\n" + gTABS + "/* Impossible to translate property " + this.property + " for " + j + " */";
+          rv += "" + gTABS + "/* Impossible to translate property " + this.property + " for " + j + " */";
       }
     }
     return rv;
@@ -5637,11 +5637,11 @@ function jscsspFontFaceRule()
 
 jscsspFontFaceRule.prototype = {
   cssText: function() {
-    var rv = gTABS + "@font-face {\n";
+    var rv = gTABS + "@font-face {";
     var preservedGTABS = gTABS;
     gTABS += "  ";
     for (var i = 0; i < this.descriptors.length; i++)
-      rv += gTABS + this.descriptors[i].cssText() + "\n";
+      rv += gTABS + this.descriptors[i].cssText() + "";
     gTABS = preservedGTABS;
     return rv + gTABS + "}";
   },
@@ -5677,13 +5677,13 @@ jscsspKeyframesRule.prototype = {
   cssText: function() {
     var rv = gTABS
                + "@keyframes "
-               + this.name + " {\n";
+               + this.name + " {";
     var preservedGTABS = gTABS;
     gTABS += "  ";
     for (var i = 0; i < this.cssRules.length; i++)
-      rv += gTABS + this.cssRules[i].cssText() + "\n";
+      rv += gTABS + this.cssRules[i].cssText() + "";
     gTABS = preservedGTABS;
-    rv += gTABS + "}\n";
+    rv += gTABS + "}";
     return rv;
   },
 
@@ -5717,13 +5717,13 @@ function jscsspKeyframeRule()
 
 jscsspKeyframeRule.prototype = {
   cssText: function() {
-    var rv = this.keyText + " {\n";
+    var rv = this.keyText + " {";
     var preservedGTABS = gTABS;
     gTABS += "  ";
     for (var i = 0; i < this.declarations.length; i++) {
       var declText = this.declarations[i].cssText();
       if (declText)
-        rv += gTABS + this.declarations[i].cssText() + "\n";
+        rv += gTABS + this.declarations[i].cssText() + "";
     }
     gTABS = preservedGTABS;
     return rv + gTABS + "}";
@@ -5760,11 +5760,11 @@ function jscsspMediaRule()
 
 jscsspMediaRule.prototype = {
   cssText: function() {
-    var rv = gTABS + "@media " + this.media.join(", ") + " {\n";
+    var rv = gTABS + "@media " + this.media.join(", ") + " {";
     var preservedGTABS = gTABS;
     gTABS += "  ";
     for (var i = 0; i < this.cssRules.length; i++)
-      rv += gTABS + this.cssRules[i].cssText() + "\n";
+      rv += gTABS + this.cssRules[i].cssText() + "";
     gTABS = preservedGTABS;
     return rv + gTABS + "}";
   },
@@ -5800,13 +5800,13 @@ function jscsspStyleRule()
 
 jscsspStyleRule.prototype = {
   cssText: function() {
-    var rv = this.mSelectorText + " {\n";
+    var rv = this.mSelectorText + " {";
     var preservedGTABS = gTABS;
     gTABS += "  ";
     for (var i = 0; i < this.declarations.length; i++) {
       var declText = this.declarations[i].cssText();
       if (declText)
-        rv += gTABS + this.declarations[i].cssText() + "\n";
+        rv += gTABS + this.declarations[i].cssText() + "";
     }
     gTABS = preservedGTABS;
     return rv + gTABS + "}";
@@ -5862,11 +5862,11 @@ jscsspPageRule.prototype = {
   cssText: function() {
     var rv = gTABS + "@page "
                    + (this.pageSelector ? this.pageSelector + " ": "")
-                   + "{\n";
+                   + "{";
     var preservedGTABS = gTABS;
     gTABS += "  ";
     for (var i = 0; i < this.declarations.length; i++)
-      rv += gTABS + this.declarations[i].cssText() + "\n";
+      rv += gTABS + this.declarations[i].cssText() + "";
     gTABS = preservedGTABS;
     return rv + gTABS + "}";
   },
@@ -5904,11 +5904,11 @@ jscsspVariablesRule.prototype = {
   cssText: function() {
     var rv = gTABS + "@variables " +
                      (this.media.length ? this.media.join(", ") + " " : "") +
-                     "{\n";
+                     "{";
     var preservedGTABS = gTABS;
     gTABS += "  ";
     for (var i = 0; i < this.declarations.length; i++)
-      rv += gTABS + this.declarations[i].cssText() + "\n";
+      rv += gTABS + this.declarations[i].cssText() + "";
     gTABS = preservedGTABS;
     return rv + gTABS + "}";
   },
@@ -6097,7 +6097,7 @@ function ParseException(description) {
 
 function CountLF(s)
 {
-  var nCR = s.match( /\n/g );
+  var nCR = s.match( //g );
   return nCR ? nCR.length + 1 : 1;
 }
 

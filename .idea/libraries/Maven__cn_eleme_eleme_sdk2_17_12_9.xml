@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cn.eleme:eleme-sdk2:17.12.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/cn/eleme/eleme-sdk2/17.12.9/eleme-sdk2-17.12.9.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/cn/eleme/eleme-sdk2/17.12.9/eleme-sdk2-17.12.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Maven/m2/repository/cn/eleme/eleme-sdk2/17.12.9/eleme-sdk2-17.12.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
