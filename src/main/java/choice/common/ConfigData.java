@@ -10,6 +10,10 @@ public class ConfigData {
      */
     public static String HTTP_URL = RM.getString("httpUrl");
     /**
+     * 车辆轨迹查询接口URL
+     */
+    public static String GUI_JI_URL = RM.getString("guiJiUrl");
+    /**
      * 加密公钥
      */
     public static String PUBLICK_KEY = RM.getString("publicKey");

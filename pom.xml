@@ -7,7 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>MeiDeProject Maven Webapp</name>
   <properties>
-    <spring.version>5.2.6.RELEASE</spring.version>
+    <spring.version>3.0.5.RELEASE</spring.version>
   </properties>
   <dependencies>
     <dependency>
@@ -18,7 +18,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>3.0.5.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -28,7 +28,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context-support</artifactId>
-      <version>3.0.5.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -52,13 +52,8 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
       <artifactId>spring-jms</artifactId>
-      <version>3.0.5.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>commons-beanutils</groupId>
@@ -232,7 +227,20 @@
       <artifactId>poi</artifactId>
       <version>3.13</version>
     </dependency>
-<!--     <dependency> -->
+    <dependency>
+      <groupId>org.apache.ws.commons.schema</groupId>
+      <artifactId>XmlSchema</artifactId>
+      <version>1.4.7</version>
+    </dependency>
+    <dependency>
+      <groupId>com.caucho</groupId>
+      <artifactId>hessian</artifactId>
+      <version>3.0.8</version>
+    </dependency>
+
+
+
+    <!--     <dependency> -->
 <!--       <groupId>com.alipay</groupId> -->
 <!--       <artifactId>alipay-sdk-java</artifactId> -->
 <!--       <version>17.12.8</version> -->
@@ -382,7 +390,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>5.2.6.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>taglibs</groupId>
