@@ -70,6 +70,22 @@ public class Encryption {
 	}
 
 	/**
+	 * 公钥加密
+	 * @param data		参数
+	 * @param publicKey	密钥
+	 * @return	返回值
+	 */
+	public static String publicEncrypt(String data, RSAPublicKey publicKey){
+		try {
+			Cipher cipher = Cipher.getInstance(KEY_ALGORITHM);
+			cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+			return Base64.encodeBase64URLSafeString(rsaSplitCodec(cipher, Cipher.ENCRYPT_MODE, data.getBytes(CHARSET), publicKey.getModulus().bitLength()));
+		} catch (Exception e){
+			throw new RuntimeException("加密字符串[" + data + "]时遇到异常", e);
+		}
+	}
+
+	/**
 	 * 分段加密
 	 * @param cipher	Cipher
 	 * @param data	加密数据
@@ -94,6 +110,43 @@ public class Encryption {
 			}
 		} catch (Exception e) {
 			throw new RuntimeException("加解密阀值为["+MAX_ENCRYPT_BLOCK+"]的数据时发生异常", e);
+		}
+		byte[] resultDatas = out.toByteArray();
+		IOUtils.closeQuietly(out);
+		return resultDatas;
+	}
+
+	/**
+	 * 分段加密
+	 * @param cipher	Cipher
+	 * @param data		加密数据
+	 * @param keySize	密钥长度
+	 * @return	返回密钥
+	 */
+	private static byte[] rsaSplitCodec(Cipher cipher, int opmode, byte[] data, int keySize){
+		int maxBlock = 0;
+		if(opmode == Cipher.DECRYPT_MODE){
+			maxBlock = keySize / 8;
+		}else{
+			maxBlock = keySize / 8 - 11;
+		}
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		int offSet = 0;
+		byte[] buff;
+		int i = 0;
+		try{
+			while(data.length > offSet){
+				if(data.length-offSet > maxBlock){
+					buff = cipher.doFinal(data, offSet, maxBlock);
+				}else{
+					buff = cipher.doFinal(data, offSet, data.length-offSet);
+				}
+				out.write(buff, 0, buff.length);
+				i++;
+				offSet = i * maxBlock;
+			}
+		}catch(Exception e){
+			throw new RuntimeException("加解密阀值为[" + maxBlock + "]的数据时发生异常", e);
 		}
 		byte[] resultDatas = out.toByteArray();
 		IOUtils.closeQuietly(out);

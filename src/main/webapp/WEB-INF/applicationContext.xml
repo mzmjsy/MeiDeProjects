@@ -27,8 +27,8 @@
 	    <property name="breakAfterAcquireFailure" value="false"/>
 	    <property name="testConnectionOnCheckout" value="false"/>
 	</bean>
-	
-<!--	<bean id="dataSource" class="com.choice.framework.util.DataSources">-->
+
+	<!--	<bean id="dataSource" class="com.choice.framework.util.DataSources">-->
 <!--		<property name="targetDataSources">-->
 <!--			<map key-type="java.lang.String">-->
 <!--				<entry value-ref="bohDataSource" key="BOH"></entry>-->

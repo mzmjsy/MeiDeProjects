@@ -19,7 +19,7 @@ import java.util.List;
 public class DeShunTong {
 
     public DeShunTong () {
-//        this.transImsToDeShunTong();
+        this.transImsToDeShunTong();
     }
 
     public void transImsToDeShunTong () {
@@ -118,7 +118,7 @@ public class DeShunTong {
                 jsonObject.put("freightPrice", rss.getString("FREIGHTPRICE"));
                 jsonObject.put("insideTransNo", rss.getString("DST_DELIVERY_ID"));
                 jsonObject.put("userAccount", rss.getString("USERACCOUNT"));
-                jsonObject.put("deliveryCode", rss.getString("DELIVERY_CODE"));
+                jsonObject.put("transEntityNo", rss.getString("TRANS_ENTITY_NO"));
 
                 listJsonObject.add(jsonObject);
                 LogUtil.writeToTxt(LogUtil.DSTXML, "dst", "传输数据：车牌号【" + truckNo + "】，计划发货日期：【" + planDeliveryDate + "】，收货地址：" + address);

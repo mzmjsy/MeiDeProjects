@@ -3,6 +3,7 @@ package choice.common;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -33,6 +34,45 @@ public class HttpUtil {
             httpPost.setEntity(stringEntity);
             httpPost.setHeader("Content-Type", "application/json;charset=UTF-8");
             response = client.execute(httpPost);
+            HttpEntity entity = response.getEntity();
+            result = JSONObject.parseObject(EntityUtils.toString(entity));
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally{
+            if (response != null){
+                try {
+                    response.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(client != null){
+                try {
+                    client.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * get调用方法
+     * @param url   url地址
+     * @param body  参数
+     * @return      返回值
+     */
+    public static JSONObject get(String url, String body){
+        JSONObject result = null;
+        CloseableHttpClient client = null;
+        CloseableHttpResponse response = null;
+        try {
+            client = HttpClients.createDefault();
+            HttpGet httpGet = new HttpGet(url + "?" + body);
+            httpGet.setHeader("Content-Type", "application/json;charset=UTF-8");
+            response = client.execute(httpGet);
             HttpEntity entity = response.getEntity();
             result = JSONObject.parseObject(EntityUtils.toString(entity));
         } catch (Exception e) {

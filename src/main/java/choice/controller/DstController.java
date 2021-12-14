@@ -19,7 +19,7 @@ import java.util.List;
  * @author mz
  */
 @Controller
-@RequestMapping("dstDelivery")
+@RequestMapping(value="/dstDelivery")
 public class DstController {
     private PreparedStatement pst;
     private ResultSet rss;

@@ -21,8 +21,8 @@
     <context:annotation-config />
     
     <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan base-package="choice.controller"></context:component-scan>
-    
+    <context:component-scan base-package="choice.controller" />
+	<mvc:default-servlet-handler />
     <!-- 完成请求和注解POJO的映射 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
     
@@ -38,7 +38,7 @@
 <!-- 	<mvc:resources mapping="/html/**" location="/WEB-INF/html/" cache-period="31556926"/>  -->
 	<!-- Configures the @Controller programming model -->
  	<mvc:annotation-driven />
- 	<mvc:view-controller path="/" view-name="redirect:/index"/>
+<!-- 	<mvc:view-controller path="/" view-name="redirect:/index"/>-->
    
 	<!--   	Spring mvc视图解析器                         -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
